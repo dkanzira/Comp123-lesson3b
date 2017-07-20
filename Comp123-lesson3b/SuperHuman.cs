@@ -7,7 +7,8 @@ using System.Text;
  * Name:Dennis Kanzira
  * Date:July 11 2017
  * Description: This is the SuperHuman class that extends the Human abstract class
- * version: 0.5 - Added Stub method DisplaySkills to conform to Human Abstract Method
+ * Version: 0.7 - Added the DisplaySkills stub method to satisfy the Human super class requirements
+ * Version: 0.8 - Added private _getPowerIndex method 
 */
 namespace Comp123_lesson3b
 {
@@ -49,6 +50,23 @@ namespace Comp123_lesson3b
             this._powers = new List<Power>();//Creates an empty list
         }
 
+        private int _getPowerIndex(string name)
+        {
+            int index = 0;
+            foreach (Power power in this.Powers)
+            {
+                if (name.Equals(power.Name))
+                {
+                    break;
+                }
+                index++;
+                if (this.Powers.Count == index)
+                {
+                    index = -1; // this means that we did not find the Power in the list
+                }
+            }
+            return index++;
+        }
         //PUBLIC METHODS
         /// <summary>
         /// 
@@ -93,7 +111,7 @@ namespace Comp123_lesson3b
 
         public override void DisplaySkills()
         {
-            Console.WriteLine("Not Implemented");
+            Console.WriteLine("Not Implemented!");
         }
 
 
