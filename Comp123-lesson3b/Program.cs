@@ -32,7 +32,25 @@ namespace Comp123_lesson3b
             superVillain.AddPower("Blinding smoke", 20);
             Console.WriteLine(superVillain.ToString());
             Console.WriteLine("Malice: " + superVillain.Malice);
+            Console.WriteLine();
 
+
+            if (superHero is SuperHero)
+            {
+                Console.WriteLine("SuperHero is a SuperHuman");
+            }
+            if (superHero is Human)
+            {
+                Console.WriteLine("SuperHero is a Human");
+            }
+            if (superHero is object)
+            {
+                Console.WriteLine("SuperHero is a object");
+            }
+            if (superHero is IHasKarma)
+            {
+                Console.WriteLine("SuperHero has Karma");
+            }
         }
     }
 }
